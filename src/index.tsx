@@ -1,7 +1,7 @@
 const a = 4;
 const b = 5;
 
-const check = () => {
+const check = (): void => {
   console.log("Как интересно!", a + b);
 };
 check();
