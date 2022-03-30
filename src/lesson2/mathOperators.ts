@@ -1,46 +1,48 @@
 export type ScalarOperationType = (first: number, second: number) => number;
 
-export const mul: ScalarOperationType = (
+export const getValueFunctionMul: ScalarOperationType = (
   first: number,
   second: number
 ): number => first * second;
 
-export const div: ScalarOperationType = (
+export const getValueFunctionDiv: ScalarOperationType = (
   first: number,
   second: number
 ): number => first / second;
 
-export const add: ScalarOperationType = (
+export const getValueFunctionAdd: ScalarOperationType = (
   first: number,
   second: number
 ): number => first + second;
 
-export const minus: ScalarOperationType = (
+export const getValueFunctionMinus: ScalarOperationType = (
   first: number,
   second: number
 ): number => first - second;
 
-export const squaring = (single: number): number => single ** 2;
+export const getValueFunctionSquaring = (single: number): number => single ** 2;
 
-export const exponentiation: ScalarOperationType = (
+export const getValueFunctionExponentiation: ScalarOperationType = (
   first: number,
   second: number
 ): number => Math.pow(first, second);
 
-export const factorial = (single: number): number => {
+export const getValueFunctionFactorial = (single: number): number => {
   let res = 1;
-  for (let i = 2; i <= single; i++) res = res * i;
+  for (let i = 2; i <= single; i++) {
+    res = res * i;
+  }
   return res;
 };
 
 export const mathOperators: { [key: string]: ScalarOperationType } = {
-  "*": mul,
-  "/": div,
-  "+": add,
-  "-": minus,
-  "**": squaring,
-  "^": exponentiation,
-  "!": factorial,
+  "*": getValueFunctionMul,
+  "/": getValueFunctionDiv,
+  "+": getValueFunctionAdd,
+  "-": getValueFunctionMinus,
+  "**": getValueFunctionSquaring,
+  "^": getValueFunctionExponentiation,
+  "!": getValueFunctionFactorial,
 };
 
 export const mathPriorities: number[] = [1, 2];

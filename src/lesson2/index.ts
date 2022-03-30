@@ -20,7 +20,7 @@ const question = (): Promise<void> =>
     });
   });
 
-async function app(): Promise<null> {
+async function app(): Promise<void> {
   while (true) {
     await question();
   }

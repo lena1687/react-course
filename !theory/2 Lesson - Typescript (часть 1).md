@@ -9,7 +9,7 @@ let decimal: number = 6;
 //String
 let color: string = "blue";
 ```
-##Function Types
+## Function Types
 ```typescript
 function add(x: number, y: number): number {
     return x + y;
@@ -19,13 +19,13 @@ let myAdd = function(x: number, y: number): number {
 };
 ```
 
-##Array
+## Array
 ```typescript
 let list: number | string[] = [1, 2, 3];
 let list: Array<number | string> = [1, 2, 3];
 let list: Array = [1, 2, 3];
 ```
-##Any (Любой)
+## Any (Любой)
 ```typescript
 let notSure: any = 4;
 notSure = "maybe a string instead";
@@ -34,7 +34,7 @@ notSure = false; // okay, definitely a boolean
 Это способ отключить проверку типов.
 Также для отключения проверки можно использовать комментарий // @ts-ignore
 
-##Never (Никогда)
+## Never (Никогда)
 Функция, возвращающая never, не должна иметь достижимую конечную точку
 ```typescript
 function error(message: string): never {
@@ -47,21 +47,21 @@ function infiniteLoop(): never {
     while (true) {}
 }
 ```
-##Void
+## Void
 ```typescript
 function warnUser(): void {
     console.log("This is my warning message");
 }
 ```
 
-##Null and Undefined
+## Null and Undefined
 Мало что еще мы можем назначить этим переменным!
 ```typescript
 let u: undefined = undefined;
 let n: null = null;
 ```
 
-##Утверждения типа (Type assertions)
+## Утверждения типа (Type assertions)
 ```typescript
 let someValue: any = "this is a string";
 let strLength: number = (someValue as string).length;
@@ -71,7 +71,7 @@ let strLength: number = (someValue as string).length;
 
 Ключевое as слово — это утверждение типа в TypeScript , которое указывает компилятору рассматривать объект как тип, отличный от типа, который компилятор определяет как объект.
 
-##Types by Interface
+## Types by Interface
 Интерфейс определяет свойства и методы, которые объект должен реализовать. 
 
 Другими словами, интерфейс - это определение кастомного типа данных, но без реализации.
@@ -88,14 +88,14 @@ interface User {
 }
 ```
 
-##Composing Types
+## Composing Types
 ```typescript
 type MyBool = true | false;
 type WindowStates = "open" | "closed" | "minimized";
 type OddNumbersUnderTen = 1 | 3 | 5 | 7 | 9;
 ```
 
-##Enum
+## Enum
 ```typescript
 enum Color {
     Red,
@@ -120,7 +120,7 @@ let ссс: Color = Color.Green;
 console.log(ссс)//2
 ```
 
-##Generics
+## Generics
 
 ```typescript
 type StringArray = Array<string>;
@@ -128,7 +128,7 @@ type NumberArray = Array<number>;
 type ObjectWithNameArray = Array<{ name: string }>;
 ```
 
-##Structural Type System
+## Structural Type System
 
 ```typescript
 interface Point {
@@ -144,7 +144,7 @@ const point = { x: 12, y: 26 };
 printPoint(point);
 ```
 
-##extends/implements
+## extends/implements
 Ключевое слово extends можно использовать только для интерфейсов и классов.
 
 ```typescript
@@ -199,7 +199,7 @@ let tom :IUser = new User(1, "Tom", 23);
 let tom :User = new User(1, "Tom", 23);
 ```
 
-##keyof
+## keyof
 Для любого типа T является keyof T объединением известных общедоступных имен свойств T.
 
 ```typescript
@@ -210,7 +210,7 @@ interface Person {
 type PersonKeys = keyof Person; // "age" | "name"
 ```
 
-##typeof
+## typeof
 TypeScript добавляет typeof оператор, который можно использовать в контексте типа для ссылки на тип переменной или свойства:
 ```typescript
 let s = "hello";
