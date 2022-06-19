@@ -28,7 +28,6 @@ export const originalArrayToExpectedArray = (
 export const originalLeadTeamToExpectedTeam = (
   originalTeam: LeadOfTeam
 ): LeadOfTeam => {
-  const obj = { ...originalTeam };
-  obj.captain.age = 28;
-  return obj;
+  const { captain } = originalTeam;
+  return { ...originalTeam, captain: { ...captain, age: 28 } };
 };
